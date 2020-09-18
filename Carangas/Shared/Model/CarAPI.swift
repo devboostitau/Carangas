@@ -44,7 +44,6 @@ class CarAPI {
     private static let session = URLSession(configuration: configuration)
     
     static func loadCars(onComplete: @escaping (Result<[Car], APIError>) -> Void) {
-        
         guard let url = URL(string: basePath) else {
             return onComplete(.failure(.badURL))
         }
@@ -123,9 +122,18 @@ class CarAPI {
     }
 }
 
+extension CarAPI: CarAPIProtocol {}
+
 enum HTTPMethod: String {
     case put = "PUT"
     case post = "POST"
     case delete = "DELETE"
     
 }
+
+
+//Dummy
+//Fake
+//Stubs
+//Spies
+//Mocks

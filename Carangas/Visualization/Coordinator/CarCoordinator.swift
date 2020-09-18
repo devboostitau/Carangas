@@ -27,6 +27,17 @@ class CarCoordinator: Coordinator {
         navigationController.pushViewController(viewController, animated: true)
     }
     
+    func editCar(with viewModel: CarFormViewModel) {
+        let childCoordinator = CarFormCoordinator(navigationController: navigationController, carFormViewModel: viewModel)
+        childCoordinator.parentCoordinator = self
+        add(childCoordinator: childCoordinator)
+        childCoordinator.start()
+    }
+    
+    func childDidFinish(_ child: Coordinator?) {
+        parentCoordinator?.childDidFinish(self)
+    }
+    
     deinit {
         print("CarCoordinator deinit")
     }

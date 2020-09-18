@@ -7,6 +7,9 @@
 
 import UIKit
 
+//Testes:
+//https://medium.com/catskillet/como-gerar-qualidade-com-testes-3ba8b43675ed
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

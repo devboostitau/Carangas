@@ -17,13 +17,14 @@ class CarsListingViewModel {
     }
     
     var carsDidUpdate: (() -> Void)?
+    var Service: CarAPIProtocol.Type = CarAPI.self
     
     var count: Int {
         cars.count
     }
     
     func loadCars() {
-        CarAPI.loadCars { [weak self] (result) in
+        Service.loadCars { [weak self] (result) in
             guard let self = self else {return}
             switch result {
             case .success(let cars):

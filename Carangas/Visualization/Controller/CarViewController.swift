@@ -33,12 +33,15 @@ class CarViewController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let carFormViewController = segue.destination as? CarFormViewController else {return}
-        carFormViewController.viewModel = viewModel?.getCarFormViewModel()
+    // MARK: - IBActions
+    @IBAction func editCar(_ sender: UIBarButtonItem) {
+        guard let carFormViewModel = viewModel?.getCarFormViewModel() else {return}
+        coordinator?.editCar(with: carFormViewModel)
     }
+    
     
     deinit {
         print("CarViewController deinit")
+        coordinator?.childDidFinish(nil)
     }
 }

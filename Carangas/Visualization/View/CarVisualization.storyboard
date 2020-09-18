@@ -50,7 +50,11 @@
                         <viewLayoutGuide key="safeArea" id="fms-P4-Ckz"/>
                     </view>
                     <navigationItem key="navigationItem" title="Caranga" id="fyE-wU-0ZD">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="d2U-xp-yjG"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="d2U-xp-yjG">
+                            <connections>
+                                <action selector="editCar:" destination="sgV-b4-M3W" id="bmb-RM-2j5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
